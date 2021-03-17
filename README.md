@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # portfolio
 
 ## Project setup
@@ -22,3 +23,6 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# portfolio
+>>>>>>> 9c04de56538b1b0cd3372286a871faff910851e6
