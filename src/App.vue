@@ -1,18 +1,24 @@
 <template>
-  <div id="app">
+  <div>
+    <img id="hyper" src="./assets/img/hyper.png">
     <div id="left-nav">
-      <div class="self-photo">
-        <img src="" alt="">
+      <div class="about">
+        About
+      </div>
+      <div class="work">
+        Work Experience
+      </div>
+      <div class="project">
+        Projects
       </div>
       <div class="contact">
-        <p>jackysoon@gmail.com</p>
+        Contact
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'App',
   components: {
@@ -28,9 +34,16 @@ html, body {
   margin: 0; padding: 0;
 }
 
+#hyper {
+  height: 100%; width: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  opacity: .5;
+  z-index: 2;
+}
 #left-nav {
   height: 100vh; width: 28%;
-  background-color: #eca2a2;
+  background-color: #46479c;
   position: fixed;
   left: 0;
 }
