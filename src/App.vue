@@ -1,7 +1,6 @@
 <template>
   <div>
-    <img id="hyper" src="./assets/img/hyper.png">
-    <div id="left-nav">
+    <div id="sidebar">
       <div class="about">
         About
       </div>
@@ -15,36 +14,38 @@
         Contact
       </div>
     </div>
+    <div id="wrapper">
+      {{ intro }}
+    </div>
   </div>
 </template>
 
 <script>
+import intro from 'intro.vue';
 export default {
   name: 'App',
   components: {
+    intro
   }
 }
 </script>
 
 <style lang="scss">
+@import './assets/main.scss';
 * {
   box-sizing: border-box;
 }
 html, body {
   margin: 0; padding: 0;
 }
-
-#hyper {
-  height: 100%; width: 100%;
-  position: absolute;
-  top: 0; left: 0;
-  opacity: .5;
-  z-index: 2;
-}
-#left-nav {
-  height: 100vh; width: 28%;
-  background-color: #46479c;
+#sidebar {
+  height: 100vh; width: 20.5%;
+  background-color: $sub-color-purple;
   position: fixed;
   left: 0;
+}
+#wrapper {
+  margin-left: 20.5%;
+  background-color: $main-color-purple;
 }
 </style>
