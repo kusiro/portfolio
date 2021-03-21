@@ -17,6 +17,9 @@
     <div id="wrapper">
       <Intro />
       <About />
+      <Work />
+      <Project />
+      <Contact />
     </div>
     <div class="bg-pattern"></div>
   </div>
@@ -25,12 +28,18 @@
 <script>
 import intro from './components/intro';
 import about from './components/about';
+import work from './components/work';
+import project from './components/project';
+import contact from './components/contact';
 
 export default {
   name: 'App',
   components: {
     Intro: intro,
-    About: about
+    About: about,
+    Work: work,
+    Project: project,
+    Contact: contact
   }
 }
 </script>
@@ -82,7 +91,9 @@ html, body {
   position: fixed;
   height: 100%;
   z-index: 10000;
+  user-select: none;
 
+  // pattern
   background-image: radial-gradient($main-color-black 1px,transparent 1px);
   background-size: 15px 15px;
 
