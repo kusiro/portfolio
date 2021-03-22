@@ -1,7 +1,20 @@
 <template>
   <div id="work">
     <h1 class="title-text">Work Experience</h1>
-    <p class="content">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+    <div class="work-experience">
+      <div class="image-head"><img src="" alt=""></div>
+      <div class="content">
+        <h1 class="title">國家高速網路運算中心</h1>
+        <h2 class="job-name">網頁開發工讀生</h2>
+        <ul>
+          <li>水利署計畫: 自動化淹水監控系統</li>
+          <li>串接全台 cctv 與政府提供之淹水數據 api</li>
+        </ul>
+        <div class="tag-wrapper">
+          <div class="tag">PHP</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
