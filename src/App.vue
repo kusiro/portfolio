@@ -21,7 +21,7 @@
       <Project />
       <Contact />
     </div>
-    <div class="bg-pattern"></div>
+    <!-- <div class="bg-pattern"></div> -->
   </div>
 </template>
 
