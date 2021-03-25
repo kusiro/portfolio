@@ -17,8 +17,8 @@
     <div id="wrapper">
       <Intro />
       <About />
-      <Work />
       <Project />
+      <Work />
       <Contact />
     </div>
     <!-- <div class="bg-pattern"></div> -->

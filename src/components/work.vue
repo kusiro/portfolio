@@ -1,16 +1,16 @@
 <template>
   <div id="work">
-    <h1 class="title-text">Work Experience</h1>
+    <h1 class="title-text">Experience</h1>
     <div class="feature-block">
       <div class="card-wrapper">
         <div class="work-experience" v-for="work in list" v-bind:key="work.id">
           <div class="image-head"><img v-bind:src="work.logo" alt=""></div>
           <div class="content">
-            <h1 class="title">{{ work.title }}</h1>
+            <div class="job-title">
+              <h1 class="title">{{ work.title }}</h1><div class="date">{{ work.date }}</div>
+            </div>
             <h2 class="job-name">{{ work.jobName }}</h2>
-            <ul>
-              <li v-for="w in work.list" v-bind:key="w.id">{{ w }}</li>
-            </ul>
+            <p>{{ work.content }}</p>
             <div class="tag-wrapper">
               <div class="tag" v-for="tag in work.tags" v-bind:key="tag.id">{{ tag }}</div>
             </div>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import NCHC from '../assets/img/NCHC.jpg';
+import NCHC from '../assets/img/logo_NCHC.png';
 
 export default {
   name: 'work',
@@ -31,22 +31,22 @@ export default {
       list: [
         {
           title: "國家高速網路運算中心",
+          date: "2017/6 - 2018/10",
           logo: NCHC,
           jobName: "網頁開發工程師",
-          list: ["水利署計畫", "串接全台 cctv 與政府提供之淹水數據"],
+          content: "水利署計畫，自動偵測淹水",
           tags: ["PHP", "AWS lambda", "python"]
         }, {
           title: "Owner",
           logo: NCHC,
           jobName: "Jobname",
-          list: ["What", "you", "do"],
+          content: "What you do in your job",
           tags: ["tag", "tag", "tag"]
         }
       ]
     }
   }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -71,47 +71,47 @@ export default {
 
       .card-wrapper {
         display: flex;
-        flex: 12;
+        flex: 1;
         flex-direction: column;
-        border-left: solid 2px $main-color-black;
         padding-left: 2em;
         justify-content: center;
           
         .work-experience {
-          // border-right: solid 1em $main-color-black;
           display: flex;
           border-radius: 10px;
           align-items: center;
-          padding: 0 2em;
+          padding: 2em 2em;
           margin: 1em 0;
-          width: 70%;
           flex-wrap: nowrap;
-          position: relative;
           background-color: #e2decd;
           font-family: $font-family;
 
           .image-head {
-            height: 75%;
-            margin-right: 2em;
-            img{ height: 100%;}
+            position: relative;
+            height: 8em;
+            margin-right: 3em;
+            img {
+              height: 100%;
+              top: 0;left: 0;
+            }
           }
           .content {
-            h1 {
-              font-size: 24px;
-              margin: 0;
+            width: 100%;
+            .job-title {
+              display: flex;
+              flex-wrap: nowrap;
+              justify-content: space-between;
+              h1 {
+                font-size: 24px;
+                margin: 0;
+              }
+              .date {
+              }
             }
             h2 {
               font-size: 20px;
               margin: 0;
               font-weight: normal;
-            }
-            ul {
-              margin: 1em 0;
-              padding-left: 1em;
-              list-style: circle;
-              li {
-                margin: .5em 0;
-              }
             }
             .tag-wrapper {
               display: flex;
