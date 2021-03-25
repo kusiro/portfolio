@@ -2,11 +2,9 @@
   <div id="work">
     <h1 class="title-text">Work Experience</h1>
     <div class="feature-block">
-      <div class="timeline"></div>
-
       <div class="card-wrapper">
         <div class="work-experience" v-for="work in list" v-bind:key="work.id">
-          <div class="image-head"><img src={{work.logo}} alt=""></div>
+          <div class="image-head"><img v-bind:src="work.logo" alt=""></div>
           <div class="content">
             <h1 class="title">{{ work.title }}</h1>
             <h2 class="job-name">{{ work.jobName }}</h2>
@@ -24,6 +22,8 @@
 </template>
 
 <script>
+import NCHC from '../assets/img/NCHC.jpg';
+
 export default {
   name: 'work',
   data() {
@@ -31,12 +31,13 @@ export default {
       list: [
         {
           title: "國家高速網路運算中心",
-          logo: "../assets/img/NCHC.jpg",
+          logo: NCHC,
           jobName: "網頁開發工程師",
           list: ["水利署計畫", "串接全台 cctv 與政府提供之淹水數據"],
           tags: ["PHP", "AWS lambda", "python"]
         }, {
           title: "Owner",
+          logo: NCHC,
           jobName: "Jobname",
           list: ["What", "you", "do"],
           tags: ["tag", "tag", "tag"]
@@ -66,17 +67,15 @@ export default {
     }
 
     .feature-block {
-      display: flex;;
+      display: flex;
 
-      .timeline {
-        flex: 1;
-        border: solid 1px;
-        margin-right: 1em;
-      }
       .card-wrapper {
         display: flex;
         flex: 12;
         flex-direction: column;
+        border-left: solid 2px $main-color-black;
+        padding-left: 2em;
+        justify-content: center;
           
         .work-experience {
           // border-right: solid 1em $main-color-black;
@@ -84,6 +83,7 @@ export default {
           border-radius: 10px;
           align-items: center;
           padding: 0 2em;
+          margin: 1em 0;
           width: 70%;
           flex-wrap: nowrap;
           position: relative;
