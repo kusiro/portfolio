@@ -30,7 +30,14 @@ export default {
           webLink: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/",
           gitLink: "https://github.com/MeiChu-Hackathon/MC_Hackathon-2018",
           image: Meichu_2108
-        }
+        },
+        {
+          title: "2018 Meichu Hackathon",
+          describe: "MeiChu Hackathon 2018 Official Website",
+          webLink: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/",
+          gitLink: "https://github.com/MeiChu-Hackathon/MC_Hackathon-2018",
+          image: Meichu_2108
+        },
       ]
     }
   }
