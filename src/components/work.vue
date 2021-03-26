@@ -39,6 +39,7 @@ export default {
         }, {
           title: "Owner",
           logo: NCHC,
+          date: "Date",
           jobName: "Jobname",
           content: "What you do in your job",
           tags: ["tag", "tag", "tag"]
