@@ -53,13 +53,13 @@ html, body {
   margin: 0; padding: 0;
 }
 #sidebar {
-  height: 100vh; width: 20.5%;
-  background-color: $main-color-white;
+  height: 100vh; width: 12%;
+  background-color: $main-color-gray;
   padding: 2em;
   text-align: right;
   position: fixed;
   color: $font-color-black;
-  font-size: 20px;
+  font-size: 1em;
   left: 0;
   font-family: $font-family;
   display: flex;
@@ -79,9 +79,9 @@ html, body {
   }
 }
 #wrapper {
-  background-color: $main-color-white;
+  background-color: $main-color-gray;
   background-size: 20px 20px;
-  margin-left: 20.5%;
+  margin-left: 12%;
 }
 
 .bg-pattern {

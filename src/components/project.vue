@@ -7,11 +7,16 @@
           <h1 class="title">{{ project.title }}</h1>
           <p class="describe">{{ project.describe }}</p>
           <div class="link-wrapper">
-            <div class="link"><a target="_blank" v-bind:href="project.webLink">View website</a></div>
-            <div class="link-icon"><a target="_blank" v-bind:href="project.gitLink"><img src="../assets/img/Github.png" alt=""></a></div>
+            <div class="link" v-for="link in project.links" v-bind:key="link.id">
+              <a target="_blank" v-bind:href="link.link">{{ link.linkName }}</a>
+            </div>
           </div>
         </div>
-        <div class="demo-image"><img v-bind:src="project.image" alt=""></div>
+        <div class="demo-image">
+          <div class="image-wrapper">
+            <img v-bind:src="project.image" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -25,17 +30,59 @@ export default {
     return {
       projects: [
         {
-          title: "2018 Meichu Hackathon",
+          title: "2017 / 2018 Meichu Hackathon",
           describe: "MeiChu Hackathon 2018 Official Website",
-          webLink: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/",
-          gitLink: "https://github.com/MeiChu-Hackathon/MC_Hackathon-2018",
+          links: [
+            {
+              linkName: "2018 website",
+              link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/"
+            }, {
+              linkName: "2017 website",
+              link: ""
+            }
+          ],
           image: Meichu_2108
         },
         {
-          title: "2018 Meichu Hackathon",
+          title: "半導體巡檢智慧系統",
           describe: "MeiChu Hackathon 2018 Official Website",
-          webLink: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/",
-          gitLink: "https://github.com/MeiChu-Hackathon/MC_Hackathon-2018",
+          links: [
+            {
+              linkName: "2018 website",
+              link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/"
+            }, {
+              linkName: "2017 website",
+              link: ""
+            }
+          ],
+          image: Meichu_2108
+        },
+        {
+          title: "食安實驗平台聯盟",
+          describe: "MeiChu Hackathon 2018 Official Website",
+          links: [
+            {
+              linkName: "2018 website",
+              link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/"
+            }, {
+              linkName: "2017 website",
+              link: ""
+            }
+          ],
+          image: Meichu_2108
+        },
+        {
+          title: "2017 / 2018 SITCON 開場動畫",
+          describe: "MeiChu Hackathon 2018 Official Website",
+          links: [
+            {
+              linkName: "2018 website",
+              link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/"
+            }, {
+              linkName: "2017 website",
+              link: ""
+            }
+          ],
           image: Meichu_2108
         },
       ]
@@ -70,19 +117,20 @@ export default {
         width: 100%;
         display: flex;
         align-items: center;
-        border-top: solid 1em $main-color-black ;
-        background-color: #d6cfb8;
-        border-radius: 5px;
-        box-shadow: 5px 5px 0 0 #6b6345;
+        background-color: $main-color-light;
+        border-radius: 1.5px;
+        box-shadow: 5px 5px 0 0 $main-color-shadow;
         margin: 2em 0;
-        padding: 1.6em 1em;
 
         .content {
-          flex: 4;
-          min-height: 300px;
+          flex: 3;
+          min-height: 350px;
           position: relative;
+          margin-right: 1em;
+          padding: 1em;
+
           h1 {
-            font-size: 32px;
+            font-size: 1.5em;
             margin: 0;
           }
           p {
@@ -92,7 +140,6 @@ export default {
           .link-wrapper {
             position: absolute;
             bottom: 1em;
-            left: 0;
             display: flex;
             align-items: center;
             flex-wrap: nowrap;
@@ -100,15 +147,15 @@ export default {
             a {
               text-decoration: none;
               color: $font-color-black;
+              font-size: .8em;
             }
 
             .link {
               border: solid 2px $main-color-black;
               font-weight: 500;
-              font-size: 16px;
               border-radius: 5px;
-              padding: 0.8em;
-              margin: 0 1em;
+              padding: 0.6em;
+              margin-right: .6em;
             }
             .link-icon {
               border-radius: 100%;
@@ -123,8 +170,20 @@ export default {
 
         .demo-image {
           width: 40%;
-          flex: 6;
-          img { width: 100%;}
+          flex: 7;
+          position: relative;
+
+          .image-wrapper {
+            height: 0;
+            padding-top: 56.25%;
+          }
+
+          img {
+            width: 100%;
+            position: absolute;
+            top: 50%;left: -1em;
+            transform: translateY(-50%);
+          }
         }
       }
     }

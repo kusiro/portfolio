@@ -4,8 +4,8 @@
     <div class="feature-block">
       <div class="card-wrapper">
         <div class="work-experience" v-for="work in list" v-bind:key="work.id">
-          <div class="image-head"><img v-bind:src="work.logo" alt=""></div>
           <div class="content">
+            <div class="image-head"><img v-bind:src="work.logo" alt=""></div>
             <div class="job-title">
               <h1 class="title">{{ work.title }}</h1><div class="date">{{ work.date }}</div>
             </div>
@@ -37,10 +37,17 @@ export default {
           content: "水利署計畫，自動偵測淹水",
           tags: ["PHP", "AWS lambda", "python"]
         }, {
-          title: "Owner",
+          title: "NTHU ELSALAB",
           logo: NCHC,
           date: "Date",
-          jobName: "Jobname",
+          jobName: "網頁開發工程師",
+          content: "What you do in your job",
+          tags: ["tag", "tag", "tag"]
+        }, {
+          title: "NTHU 學習科技組",
+          logo: NCHC,
+          date: "Date",
+          jobName: "網頁開發工程師",
           content: "What you do in your job",
           tags: ["tag", "tag", "tag"]
         }
@@ -79,17 +86,18 @@ export default {
           
         .work-experience {
           display: flex;
-          border-radius: 10px;
+          border-radius: 1.5px;
           align-items: center;
+          background-color: $main-color-light;
+          box-shadow: 5px 5px 0 0 $main-color-shadow;
           padding: 2em 2em;
           margin: 1em 0;
           flex-wrap: nowrap;
-          background-color: #e2decd;
           font-family: $font-family;
 
           .image-head {
             position: relative;
-            height: 8em;
+            height: 4em;
             margin-right: 3em;
             img {
               height: 100%;
