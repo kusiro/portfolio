@@ -5,7 +5,11 @@
       <div class="feature-block" v-for="project in projects" v-bind:key="project.id">
         <div class="content">
           <h1 class="title">{{ project.title }}</h1>
-          <p class="describe">{{ project.describe }}</p>
+          <ul class="describe-section">
+            <li class="describe" v-for="describe in project.describes" v-bind:key="describe.id">
+              {{ describe }}
+            </li>
+          </ul>
           <div class="link-wrapper">
             <div class="link" v-for="link in project.links" v-bind:key="link.id">
               <a target="_blank" v-bind:href="link.link">{{ link.linkName }}</a>
@@ -24,6 +28,7 @@
 
 <script>
 import Meichu_2108 from '../assets/img/meichuHackthon_2018.png';
+import AR from '../assets/img/AR.jpg';
 export default {
   name: 'project',
   data() {
@@ -31,7 +36,12 @@ export default {
       projects: [
         {
           title: "2017 / 2018 Meichu Hackathon",
-          describe: "MeiChu Hackathon 2018 Official Website",
+          describes: [
+            "MeiChu Hackathon 2017 / 2018 Official Website.",
+            "Design and develop the website.",
+            "Use react for 2017 website",
+            "Use vue for 2018 website"
+          ],
           links: [
             {
               linkName: "2018 website",
@@ -48,14 +58,11 @@ export default {
           describe: "MeiChu Hackathon 2018 Official Website",
           links: [
             {
-              linkName: "2018 website",
+              linkName: "pdf",
               link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/"
-            }, {
-              linkName: "2017 website",
-              link: ""
             }
           ],
-          image: Meichu_2108
+          image: AR
         },
         {
           title: "食安實驗平台聯盟",
@@ -133,8 +140,14 @@ export default {
             font-size: 1.5em;
             margin: 0;
           }
-          p {
+          .describe-section {
             margin-top: 2em;
+            padding-left: 1em;
+            list-style: georgian;
+
+            .describe {
+              margin: .8em 0;
+            }
           }
 
           .link-wrapper {
