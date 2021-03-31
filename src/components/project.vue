@@ -11,9 +11,7 @@
             </li>
           </ul>
           <div class="link-wrapper">
-            <div class="link" v-for="link in project.links" v-bind:key="link.id">
-              <a target="_blank" v-bind:href="link.link">{{ link.linkName }}</a>
-            </div>
+            <a class="link" v-for="link in project.links" v-bind:key="link.id" target="_blank" :href="link.link">{{ link.linkName }}</a>
           </div>
         </div>
         <div class="demo-image">
@@ -27,9 +25,7 @@
 </template>
 
 <script>
-import Meichu_2108 from '../assets/img/meichuHackthon_2018.png';
-import AR from '../assets/img/AR.jpg';
-// import ar_pdf from '../assets/pdf/AR_publication.pdf';
+import ar_pdf from '/src/assets/pdf/AR_publication.pdf';
 export default {
   name: 'project',
   data() {
@@ -49,10 +45,10 @@ export default {
               link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/"
             }, {
               linkName: "2017 website",
-              link: ""
+              link: "https://kusiro.github.io/MJ_Hackathon/"
             }
           ],
-          image: Meichu_2108
+          image: require('/src/assets/img/meichuHackthon_2018.png'),
         },
         {
           title: "半導體巡檢智慧系統",
@@ -66,14 +62,14 @@ export default {
           links: [
             {
               linkName: "pdf",
-              link: "../assets/pdf/AR_publication.pdf",
+              link: ar_pdf,
             },
             {
               linkName: "code",
               link: ""
             }
           ],
-          image: AR
+          image: require('/src/assets/img/AR.jpg')
         },
         {
           title: "食安實驗平台聯盟",
@@ -87,7 +83,7 @@ export default {
               link: ""
             }
           ],
-          image: Meichu_2108
+          image: "Meichu_2108"
         },
         {
           title: "2017 / 2018 SITCON 開場動畫",
@@ -101,7 +97,7 @@ export default {
               link: ""
             }
           ],
-          image: Meichu_2108
+          image: "Meichu_2108"
         },
       ]
     }
@@ -143,6 +139,7 @@ export default {
         .content {
           flex: 3;
           min-height: 350px;
+          height: 80%;
           position: relative;
           margin-right: 1em;
           padding: 1em;
@@ -154,7 +151,7 @@ export default {
           .describe-section {
             margin-top: 2em;
             padding-left: 1em;
-            list-style: georgian;
+            list-style: circle;
 
             .describe {
               margin: .8em 0;
@@ -180,6 +177,12 @@ export default {
               border-radius: 5px;
               padding: 0.6em;
               margin-right: .6em;
+              transition: 0.1s;
+
+              &:hover {
+                color: $font-color-white;
+                background-color: $main-color-black;
+              }
             }
             .link-icon {
               border-radius: 100%;
