@@ -29,6 +29,7 @@
 <script>
 import Meichu_2108 from '../assets/img/meichuHackthon_2018.png';
 import AR from '../assets/img/AR.jpg';
+// import ar_pdf from '../assets/pdf/AR_publication.pdf';
 export default {
   name: 'project',
   data() {
@@ -55,11 +56,21 @@ export default {
         },
         {
           title: "半導體巡檢智慧系統",
-          describe: "MeiChu Hackathon 2018 Official Website",
+          describe: "An AR application to improve semiconductor fabrication.",
+          describes: [
+            "MeiChu Hackathon 2017 / 2018 Official Website.",
+            "Design and develop the website.",
+            "Use react for 2017 website",
+            "Use vue for 2018 website"
+          ],
           links: [
             {
               linkName: "pdf",
-              link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/"
+              link: "../assets/pdf/AR_publication.pdf",
+            },
+            {
+              linkName: "code",
+              link: ""
             }
           ],
           image: AR
