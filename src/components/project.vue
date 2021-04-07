@@ -64,40 +64,22 @@ export default {
               linkName: "pdf",
               link: ar_pdf,
             },
-            {
-              linkName: "code",
-              link: ""
-            }
           ],
           image: require('/src/assets/img/AR.jpg')
         },
         {
-          title: "食安實驗平台聯盟",
-          describe: "MeiChu Hackathon 2018 Official Website",
-          links: [
-            {
-              linkName: "2018 website",
-              link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/"
-            }, {
-              linkName: "2017 website",
-              link: ""
-            }
-          ],
-          image: "Meichu_2108"
-        },
-        {
           title: "2017 / 2018 SITCON 開場動畫",
-          describe: "MeiChu Hackathon 2018 Official Website",
+          describe: "SITCON Opening animation",
           links: [
             {
-              linkName: "2018 website",
-              link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/"
+              linkName: "2018 Animation",
+              link: "https://youtu.be/U_7qPitWoAo"
             }, {
-              linkName: "2017 website",
-              link: ""
+              linkName: "2017 Animation",
+              link: "https://youtu.be/MWwM2_jvXHU"
             }
           ],
-          image: "Meichu_2108"
+          image: require('/src/assets/img/sitcon.png')
         },
       ]
     }
@@ -105,7 +87,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #project {
     min-height: 100vh;

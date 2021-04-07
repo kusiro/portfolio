@@ -7,7 +7,7 @@
           <div class="content">
             <div class="image-head"><img v-bind:src="work.logo" alt=""></div>
             <div class="job-title">
-              <h1 class="title">{{ work.title }}</h1><div class="date">{{ work.date }}</div>
+              <h1 class="title">{{ work.title }}</h1><!-- <div class="date">{{ work.date }}</div> -->
             </div>
             <h2 class="job-name">{{ work.jobName }}</h2>
             <p>{{ work.content }}</p>
@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import NCHC from '../assets/img/logo_NCHC.png';
 
 export default {
   name: 'work',
@@ -32,24 +31,24 @@ export default {
         {
           title: "國家高速網路運算中心",
           date: "2017/6 - 2018/10",
-          logo: NCHC,
-          jobName: "網頁開發工程師",
+          logo: require('../assets/img/logo_NCHC.png'),
+          jobName: "front-end developer (part-time)",
           content: "水利署計畫，自動偵測淹水",
           tags: ["PHP", "AWS lambda", "python"]
         }, {
           title: "NTHU ELSALAB",
-          logo: NCHC,
+          logo: require('../assets/img/elsa-lab.png'),
           date: "Date",
-          jobName: "網頁開發工程師",
+          jobName: "front-end developer (part-time)",
           content: "What you do in your job",
-          tags: ["tag", "tag", "tag"]
+          tags: ["react", "Django back-end"]
         }, {
           title: "NTHU 學習科技組",
-          logo: NCHC,
+          logo: require('../assets/img/nthu.png'),
           date: "Date",
-          jobName: "網頁開發工程師",
+          jobName: "front-end developer (part-time)",
           content: "What you do in your job",
-          tags: ["tag", "tag", "tag"]
+          tags: ["php"]
         }
       ]
     }
@@ -76,6 +75,7 @@ export default {
 
     .feature-block {
       display: flex;
+      width: 80%;
 
       .card-wrapper {
         display: flex;
@@ -88,8 +88,8 @@ export default {
           display: flex;
           border-radius: 1.5px;
           align-items: center;
-          background-color: $main-color-light;
-          box-shadow: 5px 5px 0 0 $main-color-shadow;
+          // background-color: $main-color-light;
+          // box-shadow: 5px 5px 0 0 $main-color-shadow;
           padding: 2em 2em;
           margin: 1em 0;
           flex-wrap: nowrap;
