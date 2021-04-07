@@ -54,10 +54,10 @@ export default {
           title: "半導體巡檢智慧系統",
           describe: "An AR application to improve semiconductor fabrication.",
           describes: [
-            "MeiChu Hackathon 2017 / 2018 Official Website.",
+            "Run on microsoft Hololens 2",
             "Design and develop the website.",
             "Use react for 2017 website",
-            "Use vue for 2018 website"
+            "C# / Python / unity / 3D modling"
           ],
           links: [
             {
