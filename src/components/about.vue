@@ -24,58 +24,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-#about {
-    min-height: 100vh;
-    padding: 2em 6em;
-    display: flex;
-    flex-direction: column;
-    position: relative;
 
-    .title-text {
-      color: $font-color-black;
-      font-size: 64px;
-      margin: 0;
-      display: inline-block;
-      margin: 0.6em 0;
-      font-family: $font-family;
-      display: block;
-    }
-    .sub {
-        font-size: 32px;
-        margin: 1.5em 0 0.5em 0;
-    }
-    .content {
-      margin: 0;
-      color: $font-color-black;
-      font-size: 28px;
-      font-family: $font-family;
-      display: inline-block;
-      max-width: 60%;
-    }
-    .portfolio-img {
-        position: absolute;
-        width: 20em;
-        right: 4.5em; bottom: 27%;
-        box-shadow: #0000007e 0 0 20px -5px;
-        img {
-            width: 100%;
-        }
-    }
-    .tag-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        width: 50%;
-        margin-top: 5em;
-
-        .tag {
-            font-family: $font-family;
-            padding: 0.5em;
-            border-radius: 10px;
-            margin: 0 0.3em 0 0;
-            font-weight: 700;
-            border: solid 2px $main-color-black;
-            color: $font-color-black;
-        }
-    }
-}
 </style>

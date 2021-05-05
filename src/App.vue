@@ -38,23 +38,34 @@
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <!-- <HelloWorld/> -->
+      <Intro />
+      <About />
+      <Project />
+      <Work />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+// import HelloWorld from './components/HelloWorld';
+import Intro from './components/intro';
+import About from './components/about';
+import Project from './components/project';
+import Work from './components/work';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Intro,
+    About,
+    Project,
+    Work,
   },
 
   data: () => ({
-    //
+    
   }),
 };
 </script>
