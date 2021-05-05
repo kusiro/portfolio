@@ -1,101 +1,60 @@
 <template>
-  <div>
-    <div id="sidebar">
-      <div class="about">
-        About
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
       </div>
-      <div class="work">
-        Work Experience
-      </div>
-      <div class="project">
-        Projects
-      </div>
-      <div class="contact">
-        Contact
-      </div>
-    </div>
-    <div id="wrapper">
-      <Intro />
-      <About />
-      <Project />
-      <Work />
-      <Contact />
-    </div>
-    <!-- <div class="bg-pattern"></div> -->
-  </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <HelloWorld/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import intro from './components/intro';
-import about from './components/about';
-import work from './components/work';
-import project from './components/project';
-import contact from './components/contact';
+import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
+
   components: {
-    Intro: intro,
-    About: about,
-    Work: work,
-    Project: project,
-    Contact: contact
-  }
-}
+    HelloWorld,
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
-
-<style lang="scss">
-
-* {
-  box-sizing: border-box;
-}
-html, body {
-  margin: 0; padding: 0;
-}
-#sidebar {
-  height: 100vh; width: 12%;
-  background-color: $main-color-gray;
-  padding: 2em;
-  text-align: right;
-  position: fixed;
-  color: $font-color-black;
-  font-size: 1em;
-  left: 0;
-  font-family: $font-family;
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: $font-color-black 0px 0px 10px 0px;;
-
-  div {
-    right: 0; position: relative;
-    margin: 1.5em 0;
-    padding: 0.4em 0;
-    border-bottom: solid 2px $font-color-black;
-;
-    width: 80%;
-    cursor: pointer;
-  }
-}
-#wrapper {
-  background-color: $main-color-gray;
-  background-size: 20px 20px;
-  margin-left: 12%;
-}
-
-.bg-pattern {
-  opacity: 0.3;
-  top: 0;
-  width: 100%;
-  position: fixed;
-  height: 100%;
-  z-index: 10000;
-  user-select: none;
-
-  // pattern
-  background-image: radial-gradient($main-color-black 1px,transparent 1px);
-  background-size: 15px 15px;
-
-}
-</style>
