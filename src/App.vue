@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="white"
       dark
     >
       <div class="d-flex align-center">
@@ -38,7 +38,7 @@
     </v-app-bar>
 
     <v-main>
-      <!-- <HelloWorld/> -->
+      <img id="grid" src="./assets/img/layout_desktop.svg" alt="">
       <Intro />
       <About />
       <Project />
@@ -69,3 +69,12 @@ export default {
   }),
 };
 </script>
+
+<style lang="scss">
+  #grid {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    opacity: 0.5;
+  }
+</style>
