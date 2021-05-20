@@ -1,5 +1,18 @@
 <template>
-  <div id="about">
+  <section id="about" class="overflow-hidden">
+    <v-row
+      align="center"
+      justify="center"
+    >
+      <v-col
+        cols="10"
+        md="6"
+      >
+        <base-heading>About me</base-heading>
+        <base-text>
+        </base-text>
+      </v-col>
+    </v-row>
     <h1 class="title-text">About me</h1>
     <p class="content">I am a senior student in National Tsing Hua University, majoring in Industrial Engineering and enrolling in the program of Computer Science. I am interested in front-end development and have numbers of visual / UI design experience.</p>
     <h2 class="title-text sub">A Passionate Learner</h2>
@@ -13,7 +26,7 @@
         <div class="tag">Animation</div>
         <div class="tag">AR</div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
