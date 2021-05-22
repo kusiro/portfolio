@@ -45,7 +45,7 @@ export default {
       position: absolute;
       display: block;
       width: 100%; height: 100%;
-      top: 10%; right: 22%;
+      top: 5%; right: 25%;
       z-index: -1;
       background-color: #f1f4f6;
     }
@@ -55,6 +55,22 @@ export default {
       margin-bottom: 0.3em;
       b {
         border-bottom: solid 0.2em $pop-deep;
+      }
+    }
+
+    p {
+      margin-bottom: 2em;
+      font-weight: 300;
+      letter-spacing: 1.2px;
+      font-size: 0.8em;
+    }
+    .tag-wrapper {
+      display: flex;
+      .tag {
+        padding: 1px 6px;
+        font-weight: 300;
+        border: solid 1px $pop-deep;
+        margin-right: 0.6em;
       }
     }
   }

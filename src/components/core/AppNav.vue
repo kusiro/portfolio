@@ -14,7 +14,7 @@
       <v-spacer></v-spacer>
       <ul>
         <li><router-link to="/About">About</router-link></li>
-        <li><router-link to="/Project">Project</router-link></li>
+        <li><router-link to="/Projects">Project</router-link></li>
         <li><router-link to="/Work-Experence">Experence</router-link></li>
       </ul>
       

@@ -1,27 +1,29 @@
 <template>
-  <div id="project">
-    <h1 class="title-text">Project</h1>
-    <div class="wrapper">
-      <div class="feature-block" v-for="project in projects" v-bind:key="project.id">
-        <div class="content">
-          <h1 class="title">{{ project.title }}</h1>
-          <ul class="describe-section">
-            <li class="describe" v-for="describe in project.describes" v-bind:key="describe.id">
-              {{ describe }}
-            </li>
-          </ul>
-          <div class="link-wrapper">
-            <a class="link" v-for="link in project.links" v-bind:key="link.id" target="_blank" :href="link.link">{{ link.linkName }}</a>
+  <section id="projects">
+    <div class="container main-content">
+      <h1 class="title-text">Project</h1>
+      <div class="block-wrapper">
+        <div class="feature-block" v-for="project in projects" v-bind:key="project.id">
+          <div class="content">
+            <h1 class="title">{{ project.title }}</h1>
+            <ul class="describe-section">
+              <li class="describe" v-for="describe in project.describes" v-bind:key="describe.id">
+                {{ describe }}
+              </li>
+            </ul>
+            <div class="link-wrapper">
+              <a class="link" v-for="link in project.links" v-bind:key="link.id" target="_blank" :href="link.link">{{ link.linkName }}</a>
+            </div>
           </div>
-        </div>
-        <div class="demo-image">
-          <div class="image-wrapper">
-            <img v-bind:src="project.image" alt="">
+          <div class="demo-image">
+            <div class="image-wrapper">
+              <img v-bind:src="project.image" alt="">
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -88,5 +90,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+img {
+  width: 300px;
+}
+#projects {
+  min-height: 100vh;
+  margin-top: 64px;
+}
 
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
