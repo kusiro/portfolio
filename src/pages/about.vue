@@ -1,6 +1,6 @@
 <template>
   <section id="about">
-    <article class="container">
+    <article>
       <div class="content-wrapper">
         <h1 class="title-text"><b>A</b>bout me</h1>
         <p class="content">I am a senior student in National Tsing Hua University, majoring in Industrial Engineering and enrolling in the program of Computer Science. I am interested in front-end development and have numbers of visual / UI design experience.</p>
@@ -39,6 +39,10 @@ export default {
     align-items: center;
     min-height: 100vh;
     position: relative;
+    width: 100%;
+    padding: 12px;
+    margin-right: auto;
+    margin-left: auto;
 
     &::before {
       content: '';

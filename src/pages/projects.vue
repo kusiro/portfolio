@@ -1,6 +1,6 @@
 <template>
   <section id="projects">
-    <div class="container main-content">
+    <div class="main-content">
 
       <h1 class="title-text"><b>P</b>rojects</h1>
 
@@ -120,6 +120,10 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
+  padding: 12px;
+  margin-right: auto;
+  margin-left: auto;
 
   .title-text {
     font-size: 2.8em;
