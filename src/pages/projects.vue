@@ -1,27 +1,33 @@
 <template>
   <section id="projects">
     <div class="container main-content">
-      <h1 class="title-text">Project</h1>
+
+      <h1 class="title-text"><b>P</b>rojects</h1>
+
       <div class="block-wrapper">
-        <div class="feature-block" v-for="project in projects" v-bind:key="project.id">
-          <div class="content">
-            <h1 class="title">{{ project.title }}</h1>
-            <ul class="describe-section">
-              <li class="describe" v-for="describe in project.describes" v-bind:key="describe.id">
-                {{ describe }}
-              </li>
-            </ul>
-            <div class="link-wrapper">
-              <a class="link" v-for="link in project.links" v-bind:key="link.id" target="_blank" :href="link.link">{{ link.linkName }}</a>
+        <div v-for="project in projects" v-bind:key="project.id">
+          <a class="feature-block" target="_blank" v-bind:href="project.link">
+            <div class="content">
+              <h1 class="title">{{ project.title }}</h1>
+              <h2 class="subtitle">{{ project.subtitle }}</h2>
+              <div class="descriptions-wrapper">
+                <p v-for="description in project.descriptions" v-bind:key="description.id">{{ description }}</p>
+              </div>
+              <div class="spacer"></div>
+              <div class="tag-wrapper">
+                <div class="tag" v-for="tag in project.tags" v-bind:key="tag.id">{{ tag }}</div>
+              </div>
+              <!-- <div class="link-wrapper">
+                <a class="link" v-for="link in project.links" v-bind:key="link.id" target="_blank" :href="link.link">{{ link.linkName }}</a>
+              </div> -->
             </div>
-          </div>
-          <div class="demo-image">
             <div class="image-wrapper">
               <img v-bind:src="project.image" alt="">
             </div>
-          </div>
+          </a>
         </div>
       </div>
+
     </div>
   </section>
 </template>
@@ -34,54 +40,66 @@ export default {
     return {
       projects: [
         {
-          title: "2017 / 2018 Meichu Hackathon",
-          describes: [
-            "MeiChu Hackathon 2017 / 2018 Official Website.",
-            "Design and develop the website.",
-            "Use react for 2017 website",
-            "Use vue for 2018 website"
+          title: "MeiChu Hackathon",
+          subtitle: "2018",
+          descriptions: [
+            "MeiChu Hackathon 2018 Official Website.",
           ],
-          links: [
-            {
-              linkName: "2018 website",
-              link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/"
-            }, {
-              linkName: "2017 website",
-              link: "https://kusiro.github.io/MJ_Hackathon/"
-            }
+          tags: ["vue", "google api"],
+          link: "https://meichu-hackathon.github.io/MC_Hackathon-2018/#/",
+          image: require('/src/assets/img/mockup/Meichu.png'),
+        },
+        {
+          title: "Meichu Hackathon",
+          subtitle: "2017",
+          descriptions: [
+            "MeiChu Hackathon 2017Official Website.",
           ],
-          image: require('/src/assets/img/meichuHackthon_2018.png'),
+          tags: ["React", "Angular backend"],
+          link: "https://kusiro.github.io/MJ_Hackathon/",
+          image: require('/src/assets/img/mockup/meichu2017.png'),
+        },
+        {
+          title: "2018 SITCON",
+          descriptions: [
+            "2018 SITCON official website",
+            "Develop the website with other member in SITCON's volunteer group"
+          ],
+          link: "https://sitcon.org/2018/#/",
+          tags: ["github", "vue"],
+          image: require('/src/assets/img/mockup/sitcon.png')
+        },
+        {
+          title: "ElsaLab",
+          descriptions: ["NTHU ElsaLab", ""],
+          link: "https://elsalab.ai/",
+          tags: ["react", "Django backend"],
+          image: require('/src/assets/img/mockup/elsalab.png')
         },
         {
           title: "半導體巡檢智慧系統",
-          describe: "An AR application to improve semiconductor fabrication.",
-          describes: [
+          descriptions: [
             "Run on microsoft Hololens 2",
-            "Design and develop the website.",
-            "Use react for 2017 website",
-            "C# / Python / unity / 3D modling"
           ],
-          links: [
-            {
-              linkName: "pdf",
-              link: ar_pdf,
-            },
-          ],
+          link: ar_pdf,
+          tags: ["C#", "Python", "unity", "3D modling"],
           image: require('/src/assets/img/AR.jpg')
         },
         {
-          title: "2017 / 2018 SITCON 開場動畫",
-          describe: "SITCON Opening animation",
-          links: [
-            {
-              linkName: "2018 Animation",
-              link: "https://youtu.be/U_7qPitWoAo"
-            }, {
-              linkName: "2017 Animation",
-              link: "https://youtu.be/MWwM2_jvXHU"
-            }
-          ],
-          image: require('/src/assets/img/sitcon.png')
+          title: "SITCON Animation",
+          subtitle: "2018",
+          descriptions: ["SITCON event Opening animation"],
+          link: "https://youtu.be/U_7qPitWoAo",
+          tags: ["After effects", "Blender3D"],
+          image: require('/src/assets/img/sitcon2018Opening.png')
+        },
+        {
+          title: "SITCON Animation",
+          subtitle: "2017",
+          descriptions: ["SITCON event Opening animation"],
+          link: "https://youtu.be/MWwM2_jvXHU",
+          tags: ["After effects", "Blender3D"],
+          image: require('/src/assets/img/sitcon2017Opening.png')
         },
       ]
     }
@@ -90,9 +108,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-img {
-  width: 300px;
-}
+@import '@/styles/main.scss';
 #projects {
   min-height: 100vh;
   margin-top: 64px;
@@ -100,7 +116,93 @@ img {
 
 .main-content {
   display: flex;
+  max-width: 1200px;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+  .title-text {
+    font-size: 2.8em;
+    margin-top: 2em;
+    b {
+      border-bottom: solid 0.2em #a79678;
+    }
+  }
+
+  .block-wrapper {
+    .feature-block {
+      text-decoration: none;
+      color: $main-color-dark;
+      transition: .3s;
+      cursor: pointer;
+      display: flex;
+      margin-top: 10em;
+      min-height: 480px;
+      position: relative;
+      &::before {
+        content: '';
+        width: 80%; height: 100%;
+        z-index: -1;
+        position: absolute;
+        top: -10%; right: 10%;
+        background-color: #f1f4f6;
+      }
+
+      .content {
+        transition: 0.3s;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 400px;
+        .title {
+          font-size: 2em;
+          margin: 0;
+        }
+        .subtitle {
+          font-weight: 500;
+          margin-top: -10px;
+        }
+        .descriptions-wrapper {
+          margin-top: 1em;
+          p {
+            font-size: 0.8em;
+            letter-spacing: 1px;
+            font-weight: 300;
+          }
+        }
+        .tag-wrapper  {
+          display: flex;
+
+          .tag {
+            padding: 2px 8px;
+            margin-right: 0.6em;
+            font-weight: 300;
+            border: solid 1px $pop-deep;
+          }
+        }
+      }
+
+      .image-wrapper {
+        width: 740px;
+        transition: .3s;
+        img {
+          width: 100%;
+        }
+
+        &:hover {
+        }
+      }
+
+      &:hover {
+        .content {
+          transform: scale(1.05);
+        }
+        .image-wrapper {
+          transform: translateX(3%);
+        }
+      }
+    }
+  }
 }
 </style>

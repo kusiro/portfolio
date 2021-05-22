@@ -13,9 +13,9 @@
 
       <v-spacer></v-spacer>
       <ul>
-        <li><router-link to="/About">About</router-link></li>
-        <li><router-link to="/Projects">Project</router-link></li>
-        <li><router-link to="/Work-Experence">Experence</router-link></li>
+        <li class="enable"><router-link to="/About">About</router-link></li>
+        <li class="enable"><router-link to="/Projects">Project</router-link></li>
+        <li class="disable">Experence</li>
       </ul>
       
       
@@ -52,7 +52,7 @@
     list-style: none;
     margin-right: 2em;
     padding: 0;
-    li {
+    .enable {
       position: relative;
       margin-left: 2em;
 
@@ -83,6 +83,11 @@
           left: -8px;
         }
       }
+    }
+    .disable {
+      position: relative;
+      margin-left: 2em;
+      opacity: 0.3;
     }
   }
 
