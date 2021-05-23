@@ -20,8 +20,8 @@ const routes = [
     component: () => import(/*webpackChunckName: "Projects"*/'../pages/projects.vue')
   },
   {
-    path: '/Work-Experence',
-    name: 'Work-Experence',
+    path: '/Work-Experience',
+    name: 'Work-Experience',
     component: () => import(/*webpackChunckName: "Work"*/'../pages/work.vue')
   }
 ]

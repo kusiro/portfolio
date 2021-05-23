@@ -1,34 +1,42 @@
 <template>
   <section id="projects">
-    <div class="main-content">
+    <v-container class="main-content">
 
-      <h1 class="title-text"><b>P</b>rojects</h1>
+      <v-row
+        align="center"
+        justify="center"
+      >
+        <v-col cols="12" xl="8" lg="8" md="8" sm="6">
+          <h1 class="title-text"><b>P</b>rojects</h1>
+        </v-col>
+        <v-col cols="12" class="block-wrapper">
+          <div v-for="project in projects" v-bind:key="project.id">
+            <a class="feature-block" target="_blank" v-bind:href="project.link">
+              <v-row align="center" justify="center">
+                <v-col xl="4" lg="6" md="7" sm="8" cols="8"  class="project-content">
+                  <h1 class="project-title">{{ project.title }}</h1>
+                  <h2 class="project-subtitle">{{ project.subtitle }}</h2>
+                  <div class="descriptions-wrapper">
+                    <p v-for="description in project.descriptions" v-bind:key="description.id">{{ description }}</p>
+                  </div>
+                  <div class="spacer"></div>
+                  <div class="tag-wrapper">
+                    <div class="tag" v-for="tag in project.tags" v-bind:key="tag.id">{{ tag }}</div>
+                  </div>
+                  <!-- <div class="link-wrapper">
+                    <a class="link" v-for="link in project.links" v-bind:key="link.id" target="_blank" :href="link.link">{{ link.linkName }}</a>
+                  </div> -->
+                </v-col>
+                <v-col xl="6" lg="6" md="5" sm="8" cols="8"  class="image-wrapper">
+                  <img v-bind:src="project.image" alt="">
+                </v-col>
+              </v-row>
+            </a>
+          </div>
+        </v-col>
+      </v-row>
 
-      <div class="block-wrapper">
-        <div v-for="project in projects" v-bind:key="project.id">
-          <a class="feature-block" target="_blank" v-bind:href="project.link">
-            <div class="content">
-              <h1 class="title">{{ project.title }}</h1>
-              <h2 class="subtitle">{{ project.subtitle }}</h2>
-              <div class="descriptions-wrapper">
-                <p v-for="description in project.descriptions" v-bind:key="description.id">{{ description }}</p>
-              </div>
-              <div class="spacer"></div>
-              <div class="tag-wrapper">
-                <div class="tag" v-for="tag in project.tags" v-bind:key="tag.id">{{ tag }}</div>
-              </div>
-              <!-- <div class="link-wrapper">
-                <a class="link" v-for="link in project.links" v-bind:key="link.id" target="_blank" :href="link.link">{{ link.linkName }}</a>
-              </div> -->
-            </div>
-            <div class="image-wrapper">
-              <img v-bind:src="project.image" alt="">
-            </div>
-          </a>
-        </div>
-      </div>
-
-    </div>
+    </v-container>
   </section>
 </template>
 
@@ -115,15 +123,6 @@ export default {
 }
 
 .main-content {
-  display: flex;
-  max-width: 1200px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  padding: 12px;
-  margin-right: auto;
-  margin-left: auto;
 
   .title-text {
     font-size: 2.8em;
@@ -145,39 +144,54 @@ export default {
       position: relative;
       &::before {
         content: '';
-        width: 80%; height: 100%;
+        width: 65%; height: 100%;
         z-index: -1;
         position: absolute;
-        top: -10%; right: 10%;
+        top: -10%; left: 10%;
         background-color: #f1f4f6;
       }
 
-      .content {
+      .project-content {
         transition: 0.3s;
-        flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 400px;
-        .title {
+        @include phone-width {
+          height: 280px;
+        }
+        .project-title {
           font-size: 2em;
           margin: 0;
+          
+          @include phone-width {
+            font-size: 1.6em;
+          }
         }
-        .subtitle {
+        .project-subtitle {
           font-weight: 500;
+          font-size: 1.6em;
           margin-top: -10px;
+          @include phone-width {
+            font-size: 1.3em;
+          }
         }
         .descriptions-wrapper {
           margin-top: 1em;
           p {
-            font-size: 0.8em;
+            font-size: 1.2em;
             letter-spacing: 1px;
             font-weight: 300;
+            @include laptop-width {
+              font-size: 1em;
+            }
+            @include phone-width {
+              font-size: 1em;
+            }
           }
         }
         .tag-wrapper  {
           display: flex;
-
           .tag {
             padding: 2px 8px;
             margin-right: 0.6em;
@@ -188,18 +202,17 @@ export default {
       }
 
       .image-wrapper {
-        width: 740px;
         transition: .3s;
+        @include phone-width {
+          margin-top: 1.6em;
+        }
         img {
           width: 100%;
-        }
-
-        &:hover {
         }
       }
 
       &:hover {
-        .content {
+        .project-content {
           transform: scale(1.05);
         }
         .image-wrapper {

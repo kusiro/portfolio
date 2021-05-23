@@ -7,6 +7,24 @@ $font-color-black: #494539;
 $font-color-white: #f7f7f7;
 $font-family: 'Roboto', sans-serif;
 
+@mixin pc-width() {
+  @media all and (min-width: 1264px) {
+    @content;
+  }
+}
+
+@mixin laptop-width() {
+  @media all and (min-width: 960px) and (max-width: 1263px) {
+    @content;
+  }
+}
+
+@mixin phone-width() {
+  @media all and (max-width: 959px) {
+    @content;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
