@@ -32,7 +32,7 @@
           sm="0"
           class="portfolio-img"
         >
-            <img src="../assets/img/portofilo.jpg" alt="">
+            <img src="../assets/img/portofilo.png" alt="">
         </v-col>
       </v-row>
     </v-container>
