@@ -16,7 +16,7 @@
       <ul class="bar-item">
         <li class="enable"><router-link to="/About">About</router-link></li>
         <li class="enable"><router-link to="/Projects">Project</router-link></li>
-        <li class="disable">Experience</li>
+        <li class="enable"><router-link to="Work-Experience">Experience</router-link></li>
       </ul>
       <!-- Nav draw icon -->
       <v-app-bar-nav-icon class="draw-icon" @click="drawer = true"></v-app-bar-nav-icon>
@@ -88,21 +88,21 @@
     &::before, &::after {
       content: '';
       position: absolute;
-      transition: .3s cubic-bezier(0.9, 0, 0.1, 1);
+      transition: .3s cubic-bezier(0.3, 0, 0.1, 1);
       opacity: 0;
       background: #a79678;
     }
     &::before {
       width: 2px;
       height: 6px; 
-      bottom: 10px;
+      bottom: 30px;
       left: -8px;
     }
     &::after {
       width: 6px;
       height: 2px; 
       bottom: -3px;
-      left: 10px;
+      left: 30px;
     }
 
     &:hover {
@@ -127,21 +127,21 @@
     &::before, &::after {
       content: '';
       position: absolute;
-      transition: .3s cubic-bezier(0.9, 0, 0.1, 1);
+      transition: .3s cubic-bezier(0.3, 0, 0.1, 1);
       opacity: 0;
       background: #a79678;
     }
     &::before {
       width: 2px;
       height: 6px; 
-      top: 10px;
+      top: 30px;
       right: -5px;
     }
     &::after {
       width: 6px;
       height: 2px; 
       top: -3px;
-      right: 10px;
+      right: 30px;
     }
 
     &:hover {

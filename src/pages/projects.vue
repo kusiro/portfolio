@@ -9,11 +9,11 @@
         <v-col cols="12" xl="8" lg="8" md="8" sm="6">
           <h1 class="title-text"><b>P</b>rojects</h1>
         </v-col>
-        <v-col cols="12" class="block-wrapper">
+        <v-col cols="12" xl="10" lg="9" md="8" sm="8" class="block-wrapper">
           <div v-for="project in projects" v-bind:key="project.id">
             <a class="feature-block" target="_blank" v-bind:href="project.link">
               <v-row align="center" justify="center">
-                <v-col xl="4" lg="6" md="7" sm="8" cols="8"  class="project-content">
+                <v-col xl="4" lg="6" md="6" sm="8" cols="8"  class="project-content">
                   <h1 class="project-title">{{ project.title }}</h1>
                   <h2 class="project-subtitle">{{ project.subtitle }}</h2>
                   <div class="descriptions-wrapper">
@@ -27,7 +27,7 @@
                     <a class="link" v-for="link in project.links" v-bind:key="link.id" target="_blank" :href="link.link">{{ link.linkName }}</a>
                   </div> -->
                 </v-col>
-                <v-col xl="6" lg="6" md="5" sm="8" cols="8"  class="image-wrapper">
+                <v-col xl="6" lg="6" md="6" sm="8" cols="8"  class="image-wrapper">
                   <img v-bind:src="project.image" alt="">
                 </v-col>
               </v-row>
@@ -149,6 +149,9 @@ export default {
         position: absolute;
         top: -10%; left: 10%;
         background-color: #f1f4f6;
+        @include phone-width {
+          width: 80%;
+        }
       }
 
       .project-content {
@@ -163,7 +166,9 @@ export default {
         .project-title {
           font-size: 2em;
           margin: 0;
-          
+          @include laptop-width {
+            font-size: 1.8em;
+          }
           @include phone-width {
             font-size: 1.6em;
           }
@@ -172,6 +177,9 @@ export default {
           font-weight: 500;
           font-size: 1.6em;
           margin-top: -10px;
+          @include laptop-width {
+            font-size: 1.4em;
+          }
           @include phone-width {
             font-size: 1.3em;
           }
@@ -186,7 +194,7 @@ export default {
               font-size: 1em;
             }
             @include phone-width {
-              font-size: 1em;
+              font-size: 0.9em;
             }
           }
         }
