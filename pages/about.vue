@@ -46,7 +46,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
 
 #about {
   margin-top: 64px;
@@ -64,25 +63,11 @@ export default {
       top: 0;
       z-index: -1;
       background-color: #f1f4f6;
-      @include phone-width {
-        width: 100%;
-        left: 0;
-        top: 0;
-      }
     }
 
     .title-text {
       font-size: 2.6em;
-      @include laptop-width {
-        font-size: 1.8em;
-      }
-      @include phone-width {
-        font-size: 1.8em;
-      }
       margin-bottom: 0.3em;
-      b {
-        border-bottom: solid 0.2em $pop-deep;
-      }
     }
 
     p {
@@ -91,38 +76,19 @@ export default {
       letter-spacing: 1.2px;
       font-size: 1em;
       max-width: 480px;
-      @include laptop-width {
-        font-size: 0.8em;
-      }
-      @include phone-width {
-        font-size: 0.8em;
-      }
     }
     .tag-wrapper {
       display: flex;
       .tag {
         padding: 1px 6px;
         font-weight: 300;
-        border: solid 1px $pop-deep;
         margin-right: 0.6em;
         font-size: 1em;
-        @include laptop-width {
-          font-size: 0.8em;
-        }
-        @include phone-width {
-          font-size: 0.7em;
-        }
       }
     }
   }
   .portfolio-img {
-    // max-height: 520px;
-    @include laptop-width {
-      // max-height: 480px;
-    }
-    @include phone-width {
-      display: none;
-    }
+
     img {
       width: 100%;
     }

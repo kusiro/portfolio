@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar
+    <div
         id="nav"
         v-scroll="onScroll"
         :color="!isScrolling ? 'transparent' : '#f1f4f6'"
@@ -8,21 +8,20 @@
         flat
       >
       
-      <v-slide-x-transition>
-        <v-toolbar-title><router-link to="/">Soon Chun</router-link></v-toolbar-title>
-      </v-slide-x-transition>
-
-      <v-spacer></v-spacer>
       <ul class="bar-item">
-        <li class="enable"><router-link to="/About">About</router-link></li>
-        <li class="enable"><router-link to="/Projects">Project</router-link></li>
-        <li class="enable"><router-link to="Work-Experience">Experience</router-link></li>
+        <li><NuxtLink to="/">Icon</NuxtLink></li>
+      </ul>
+
+      <ul class="bar-item">
+        <li class="enable"><NuxtLink to="/About">About</NuxtLink></li>
+        <li class="enable"><NuxtLink to="/Projects">Project</NuxtLink></li>
+        <li class="enable"><NuxtLink to="Work-Experience">Experience</NuxtLink></li>
+        <v-app-bar-nav-icon class="draw-icon" @click="drawer = true"></v-app-bar-nav-icon>
       </ul>
       <!-- Nav draw icon -->
-      <v-app-bar-nav-icon class="draw-icon" @click="drawer = true"></v-app-bar-nav-icon>
-    </v-app-bar>
+    </div>
     <!-- Nav draw list -->
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
         v-model="drawer"
         fixed
         temporary
@@ -34,15 +33,13 @@
         <li class="enable"><router-link to="/Projects">Project</router-link></li>
         <li class="disable">Experience</li>
       </ul>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
   </div>
 </template>
 
 <script>
   
   export default {
-    name: 'CoreAppBar',
-
 
     data: () => ({
       showLogo: false,
@@ -72,13 +69,15 @@
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/main.scss';
-
+#nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2em;
+}
 .bar-item {
   display: flex;
   align-items: center;
   list-style: none;
-  margin-right: 2em;
   padding: 0;
   transition: .3s;
   .enable {
@@ -121,7 +120,7 @@
   a {    
     color: #2c3e50;
     text-decoration: none;
-    font-family: $font-family;
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     display: block;
     &::before, &::after {
@@ -176,7 +175,7 @@
   a {
     color: #2c3e50;
     text-decoration: none;
-    font-family: $font-family;
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     display: block;
   }

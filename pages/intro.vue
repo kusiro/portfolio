@@ -13,7 +13,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
   #intro {
     min-height: 100vh;
     display: flex;

@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import ar_pdf from '/src/assets/pdf/AR_publication.pdf';
+// import ar_pdf from '/src/assets/pdf/AR_publication.pdf';
 export default {
   name: 'project',
   data() {
@@ -135,7 +135,6 @@ export default {
   .block-wrapper {
     .feature-block {
       text-decoration: none;
-      color: $main-color-dark;
       transition: .3s;
       cursor: pointer;
       display: flex;
@@ -149,9 +148,6 @@ export default {
         position: absolute;
         top: -10%; left: 10%;
         background-color: #f1f4f6;
-        @include phone-width {
-          width: 80%;
-        }
       }
 
       .project-content {
@@ -160,29 +156,14 @@ export default {
         flex-direction: column;
         justify-content: space-between;
         height: 400px;
-        @include phone-width {
-          height: 280px;
-        }
         .project-title {
           font-size: 2em;
           margin: 0;
-          @include laptop-width {
-            font-size: 1.8em;
-          }
-          @include phone-width {
-            font-size: 1.6em;
-          }
         }
         .project-subtitle {
           font-weight: 500;
           font-size: 1.6em;
           margin-top: -10px;
-          @include laptop-width {
-            font-size: 1.4em;
-          }
-          @include phone-width {
-            font-size: 1.3em;
-          }
         }
         .descriptions-wrapper {
           margin-top: 1em;
@@ -190,12 +171,6 @@ export default {
             font-size: 1.2em;
             letter-spacing: 1px;
             font-weight: 300;
-            @include laptop-width {
-              font-size: 1em;
-            }
-            @include phone-width {
-              font-size: 0.9em;
-            }
           }
         }
         .tag-wrapper  {
@@ -204,7 +179,6 @@ export default {
             padding: 2px 8px;
             margin-right: 0.6em;
             font-weight: 300;
-            border: solid 1px $pop-deep;
           }
         }
       }
